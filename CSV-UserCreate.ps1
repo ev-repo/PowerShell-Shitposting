@@ -25,7 +25,7 @@ foreach ($User in $ADUsers) {
 
     #Creates AD user using info given
     New-ADUser -GivenName $firstName -Surname $lastName -SamAccountName $username -EmailAddress $email -OfficePhone $phone -Path $OU -AccountPassword (ConvertTo-SecureString $userPW -AsPlainText -Force)
-    Write-Host "Created user $username 'nPassword: $userPW"
+    Write-Host "Created user $username `nPassword: $userPW"
 
     #BOMB ASS GROUP ADDER
     $groups = $User.Groups
